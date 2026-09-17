@@ -52,6 +52,15 @@
 
 <body>
 
+
+    <div id="splashScreen" class="splash-screen">
+    <img
+        src="assets/images/nutrix-splash.png"
+        alt="NutriX"
+        class="splash-image"
+    >
+     </div>
+
     <!-- Background -->
     <div class="page-bg"></div>
 
@@ -553,6 +562,14 @@
 
     
     <script src="app.js"></script>
+
+    <script>
+    window.addEventListener("load", () => {
+        setTimeout(() => {
+            document.getElementById("splashScreen").classList.add("hide");
+        }, 1800);
+    });
+   </script>
 
 </body>
 
