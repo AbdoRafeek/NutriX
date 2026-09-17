@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#10231b"
+    >
+
+    <title>NutriX — Fitness & Nutrition</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/images/nutrix-logo.png"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#071a13">
+
+</head>
+
+    
+    <script>
+    if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./service-worker.js")
+            .then(() => {
+                console.log("NutriX Service Worker registered");
+            })
+            .catch(error => {
+                console.error("Service Worker registration failed:", error);
+            });
+    });
+}
+    </script>
+ 
+
+<body>
+
+    <!-- Background -->
+    <div class="page-bg"></div>
+
+
+    <!-- Header -->
+    <header class="topbar glass">
+
+        <a
+            href="index.html"
+            class="brand"
+        >
+
+            <img
+                src="assets/images/nutrix-logo.png"
+                alt="NutriX Logo"
+            >
+
+            <span>
+                Nutri<span>X</span>
+            </span>
+
+        </a>
+
+
+        <div class="topbar-actions">
+
+    <a
+        href="pages/calculator.html"
+        class="profile-btn"
+        aria-label="Open calculator"
+    >
+        👤
+    </a>
+
+    <a
+        href="pages/settings.html"
+        class="settings-page-btn"
+        aria-label="Settings"
+    >
+        ⚙️
+    </a>
+
+</div>
+
+    </header>
+
+
+
+    <!-- Main -->
+    <main class="container">
+
+
+        <!-- Welcome -->
+        <section class="welcome">
+
+            <p>
+                Good Morning 👋
+            </p>
+
+            <h1>
+                Let's reach your goal.
+            </h1>
+
+            <a
+                href="pages/calculator.html"
+                class="setup-btn"
+            >
+                Calculate My Calories →
+            </a>
+
+        </section>
+
+
+
+        <!-- Calories -->
+        <section class="calorie-card glass-dark">
+
+            <div class="calorie-info">
+
+                <p class="label">
+                    Today's Calories
+                </p>
+
+                <h2>
+
+                    <span id="caloriesConsumed">
+                        0
+                    </span>
+
+                    <small>
+                        /
+                        <span id="caloriesGoal">
+                            2300
+                        </span>
+                        kcal
+                    </small>
+
+                </h2>
+
+
+                <div class="calorie-progress">
+
+                    <div
+                        id="calorieProgress"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="calorie-circle">
+
+                <span id="caloriePercent">
+                    0%
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Macros -->
+        <section class="section">
+
+            <div class="section-header">
+
+                <h2>
+                    Macros
+                </h2>
+
+                <span>
+                    Today
+                </span>
+
+            </div>
+
+
+            <div class="macro-grid">
+
+
+                <!-- Protein -->
+                <div class="macro-card glass">
+
+                    <div class="macro-icon">
+                        🥩
+                    </div>
+
+                    <h3>
+                        Protein
+                    </h3>
+
+                    <strong id="proteinConsumed">
+                        0g
+                    </strong>
+
+                    <p>
+                        /
+                        <span id="proteinGoal">
+                            170
+                        </span>
+                        g
+                    </p>
+
+
+                    <div class="progress">
+
+                        <div
+                            id="proteinProgress"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Carbs -->
+                <div class="macro-card glass">
+
+                    <div class="macro-icon">
+                        🍚
+                    </div>
+
+                    <h3>
+                        Carbs
+                    </h3>
+
+                    <strong id="carbsConsumed">
+                        0g
+                    </strong>
+
+                    <p>
+                        /
+                        <span id="carbsGoal">
+                            250
+                        </span>
+                        g
+                    </p>
+
+
+                    <div class="progress">
+
+                        <div
+                            id="carbsProgress"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Fat -->
+                <div class="macro-card glass">
+
+                    <div class="macro-icon">
+                        🥑
+                    </div>
+
+                    <h3>
+                        Fat
+                    </h3>
+
+                    <strong id="fatConsumed">
+                        0g
+                    </strong>
+
+                    <p>
+                        /
+                        <span id="fatGoal">
+                            70
+                        </span>
+                        g
+                    </p>
+
+
+                    <div class="progress">
+
+                        <div
+                            id="fatProgress"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Meals -->
+        <section class="section">
+
+            <div class="section-header">
+
+                <h2>
+                    Today's Meals
+                </h2>
+
+                <a
+                    href="pages/food.html"
+                    class="add-btn"
+                >
+                    + Add Food
+                </a>
+
+            </div>
+
+
+            <div class="meal-list">
+
+
+                <!-- Breakfast -->
+                <div class="meal glass">
+
+                    <div class="meal-info">
+
+                        <span class="meal-icon">
+                            🍳
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Breakfast
+                            </h3>
+
+                            <p id="breakfastInfo">
+                                Not added yet
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <strong id="breakfastCalories">
+                        0 kcal
+                    </strong>
+
+                </div>
+
+
+
+                <!-- Lunch -->
+                <div class="meal glass">
+
+                    <div class="meal-info">
+
+                        <span class="meal-icon">
+                            🍗
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Lunch
+                            </h3>
+
+                            <p id="lunchInfo">
+                                Not added yet
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <strong id="lunchCalories">
+                        0 kcal
+                    </strong>
+
+                </div>
+
+
+
+                <!-- Snack -->
+                <div class="meal glass">
+
+                    <div class="meal-info">
+
+                        <span class="meal-icon">
+                            🍌
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Snack
+                            </h3>
+
+                            <p id="snackInfo">
+                                Not added yet
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <strong id="snackCalories">
+                        0 kcal
+                    </strong>
+
+                </div>
+
+
+
+                <!-- Dinner -->
+                <div class="meal glass">
+
+                    <div class="meal-info">
+
+                        <span class="meal-icon">
+                            🥗
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Dinner
+                            </h3>
+
+                            <p id="dinnerInfo">
+                                Not added yet
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <strong id="dinnerCalories">
+                        0 kcal
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Workout -->
+        <section class="workout-card glass-green">
+
+            <div>
+
+                <p>
+                    Today's Workout
+                </p>
+
+                <h2 id="workoutName">
+                    No workout yet
+                </h2>
+
+                <span id="workoutDetails">
+                    Create your workout plan
+                </span>
+
+            </div>
+
+
+            <a
+                href="pages/workout.html"
+                class="workout-btn"
+            >
+                View Workout
+            </a>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav glass">
+
+        <a
+            href="index.html"
+            class="active"
+        >
+            <span>🏠</span>
+            Home
+        </a>
+
+
+        <a href="pages/calculator.html">
+
+            <span>
+                🔥
+            </span>
+
+            Calories
+
+        </a>
+
+
+        <a href="pages/food.html">
+
+            <span>
+                🍽️
+            </span>
+
+            Food
+
+        </a>
+
+
+        <a href="pages/workout.html">
+
+            <span>
+                🏋️
+            </span>
+
+            Workout
+
+        </a>
+
+
+        <a href="pages/progress.html">
+
+            <span>
+                📈
+            </span>
+
+            Progress
+
+        </a>
+
+    </nav>
+
+
+    
+    <script src="app.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NutriX - Food Tracker</title>
+
+   <link
+    rel="icon"
+    href="../assets/images/nutrix-logo.png">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="page-bg food-page">
+
+  <div class="app-container">
+
+    <!-- ==============================
+         HEADER
+    =============================== -->
+    <header class="page-header">
+
+      <a href="../index.html" class="back-btn">
+        ←
+      </a>
+
+      <div class="page-title">
+
+        <img
+          src="../assets/images/nutrix-logo.png"
+          alt="NutriX"
+        >
+
+        <div>
+          <h1>Food Tracker</h1>
+
+          <p>
+            Track your meals and reach your goals
+          </p>
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <main class="container">
+
+      <!-- ==============================
+           DAILY SUMMARY
+      =============================== -->
+
+      <section class="food-summary glass">
+
+        <div class="summary-header">
+
+          <div>
+            <span>YOUR DAILY PROGRESS</span>
+
+            <h2>
+              Today's Nutrition
+            </h2>
+          </div>
+
+          <div class="summary-percentage">
+            <strong id="caloriePercentage">0%</strong>
+          </div>
+
+        </div>
+
+
+        <!-- CALORIES -->
+
+        <div class="summary-main">
+
+          <div class="summary-calories">
+
+            <div class="summary-icon">
+              🔥
+            </div>
+
+            <div>
+
+              <span>
+                Calories
+              </span>
+
+              <strong>
+                <span id="totalCalories">0</span>
+                <small>
+                  /
+                  <span id="calorieGoal">2300</span>
+                  kcal
+                </small>
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <div class="progress-bar">
+
+            <div
+              id="calorieProgress"
+              class="progress-fill"
+            ></div>
+
+          </div>
+
+        </div>
+
+
+        <!-- MACROS -->
+
+        <div class="macro-summary">
+
+          <!-- PROTEIN -->
+
+          <div class="macro-card">
+
+            <div class="macro-card-top">
+
+              <span class="macro-icon">
+                🥩
+              </span>
+
+              <span>
+                Protein
+              </span>
+
+            </div>
+
+            <strong>
+              <span id="totalProtein">0</span>g
+            </strong>
+
+            <small>
+              / <span id="proteinGoal">170</span>g
+            </small>
+
+            <div class="progress-bar small">
+
+              <div
+                id="proteinProgress"
+                class="progress-fill"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+          <!-- CARBS -->
+
+          <div class="macro-card">
+
+            <div class="macro-card-top">
+
+              <span class="macro-icon">
+                🍚
+              </span>
+
+              <span>
+                Carbs
+              </span>
+
+            </div>
+
+            <strong>
+              <span id="totalCarbs">0</span>g
+            </strong>
+
+            <small>
+              / <span id="carbsGoal">250</span>g
+            </small>
+
+            <div class="progress-bar small">
+
+              <div
+                id="carbsProgress"
+                class="progress-fill"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+          <!-- FAT -->
+
+          <div class="macro-card">
+
+            <div class="macro-card-top">
+
+              <span class="macro-icon">
+                🥑
+              </span>
+
+              <span>
+                Fat
+              </span>
+
+            </div>
+
+            <strong>
+              <span id="totalFat">0</span>g
+            </strong>
+
+            <small>
+              / <span id="fatGoal">70</span>g
+            </small>
+
+            <div class="progress-bar small">
+
+              <div
+                id="fatProgress"
+                class="progress-fill"
+              ></div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+     <!-- AI FOOD SCANNER -->
+<section class="food-scanner-section">
+    <div class="section-title">
+        <div>
+            <h2>AI Food Scanner</h2>
+            <p>Take a photo and let NutriX estimate your meal</p>
+        </div>
+        <span class="ai-badge">AI</span>
+    </div>
+
+    <div class="ai-scanner-card">
+
+        <input
+            type="file"
+            id="foodImageInput"
+            accept="image/*"
+            capture="environment"
+            hidden
+        >
+
+        <div class="scanner-upload" id="scannerUpload">
+            <div class="scanner-icon">
+                <i class="fa-solid fa-camera"></i>
+            </div>
+
+            <h3>Scan Your Food</h3>
+
+            <p>
+                Take a photo or choose an image of your meal
+            </p>
+
+            <button
+                type="button"
+                class="scan-food-btn"
+                id="scanFoodBtn"
+            >
+                <i class="fa-solid fa-camera"></i>
+                Scan Food
+            </button>
+        </div>
+
+        <!-- Image Preview -->
+<div class="scanner-preview" id="scannerPreview" hidden>
+
+    <img
+        id="foodPreviewImage"
+        alt="Food preview"
+    >
+
+    <button
+        type="button"
+        class="remove-scan-btn"
+        id="removeScanBtn"
+        aria-label="Remove image"
+        style="
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 42px;
+            height: 42px;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 1;
+            cursor: pointer;
+            z-index: 99999;
+        "
+    >×</button>
+
+</div>
+
+        <!-- Loading -->
+        <div class="scanner-loading" id="scannerLoading" hidden>
+            <div class="ai-loader"></div>
+
+            <h3>Analyzing your meal...</h3>
+
+            <p>
+                NutriX AI is identifying the food and estimating nutrition
+            </p>
+        </div>
+
+        <!-- AI Result -->
+        <div class="scanner-result" id="scannerResult" hidden>
+
+            <div class="ai-result-header">
+                <div>
+                    <span class="result-label">AI ESTIMATION</span>
+                    <h3>Your Meal</h3>
+                </div>
+
+                <span
+                    class="confidence-badge"
+                    id="aiConfidence"
+                >
+                    --
+                </span>
+            </div>
+
+            <div
+                class="ai-food-items"
+                id="aiFoodItems"
+            ></div>
+
+            <div class="ai-total-card">
+
+                <div class="ai-total-item">
+                    <span>Calories</span>
+                    <strong id="aiCalories">0</strong>
+                    <small>kcal</small>
+                </div>
+
+                <div class="ai-total-item">
+                    <span>Protein</span>
+                    <strong id="aiProtein">0</strong>
+                    <small>g</small>
+                </div>
+
+                <div class="ai-total-item">
+                    <span>Carbs</span>
+                    <strong id="aiCarbs">0</strong>
+                    <small>g</small>
+                </div>
+
+                <div class="ai-total-item">
+                    <span>Fat</span>
+                    <strong id="aiFat">0</strong>
+                    <small>g</small>
+                </div>
+
+            </div>
+
+            <div class="ai-note" id="aiNote"></div>
+
+            <button
+                type="button"
+                class="add-ai-food-btn"
+                id="addAiFoodBtn"
+            >
+                <i class="fa-solid fa-plus"></i>
+                Add To Today's Food
+            </button>
+
+            <button
+                type="button"
+                class="scan-again-btn"
+                id="scanAgainBtn"
+            >
+                <i class="fa-solid fa-rotate"></i>
+                Scan Another Meal
+            </button>
+
+        </div>
+
+    </div>
+</section>
+
+
+      <!-- ==============================
+           ADD FOOD
+      =============================== -->
+
+      <section class="food-form-card glass">
+
+        <div class="section-title">
+
+          <div>
+
+            <h2>
+              Add Food
+            </h2>
+
+            <p>
+              Add what you ate today
+            </p>
+
+          </div>
+
+          <div class="section-icon">
+            🍽️
+          </div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="form-group">
+
+          <label for="foodSearch">
+            Search Food
+          </label>
+
+          <input
+            type="text"
+            id="foodSearch"
+            placeholder="Search chicken, rice, eggs..."
+            autocomplete="off"
+          >
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <form id="foodForm">
+
+          <!-- FOOD -->
+
+          <div class="form-group">
+
+            <label for="food">
+              Food
+            </label>
+
+            <select
+              id="food"
+              name="food"
+              required
+            >
+
+              <option value="">
+                Select food
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- MEAL -->
+
+          <div class="field-row">
+
+            <div class="form-group">
+
+              <label for="meal">
+                Meal
+              </label>
+
+              <select
+                id="meal"
+                name="meal"
+                required
+              >
+
+                <option value="Breakfast">
+                  🌅 Breakfast
+                </option>
+
+                <option value="Lunch">
+                  ☀️ Lunch
+                </option>
+
+                <option value="Snack">
+                  🍎 Snack
+                </option>
+
+                <option value="Dinner">
+                  🌙 Dinner
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <!-- QUANTITY -->
+
+            <div class="form-group">
+
+              <label for="quantity">
+
+                Quantity
+
+                <span id="quantityUnit">
+                  (grams)
+                </span>
+
+              </label>
+
+              <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                value="100"
+                min="1"
+                step="1"
+                required
+              >
+
+            </div>
+
+          </div>
+
+
+          <!-- PREVIEW -->
+
+          <div
+            class="food-preview"
+            id="foodPreview"
+            style="display:none;"
+          >
+
+            <span>
+              Nutrition Preview
+            </span>
+
+            <div class="preview-title">
+
+              <span id="previewEmoji">
+                🍽️
+              </span>
+
+              <span id="previewName">
+                Food
+              </span>
+
+              <small id="previewQuantity">
+                100g
+              </small>
+
+            </div>
+
+
+            <div class="preview-grid">
+
+              <div>
+
+                <strong id="previewCalories">
+                  0
+                </strong>
+
+                <span>
+                  kcal
+                </span>
+
+              </div>
+
+
+              <div>
+
+                <strong id="previewProtein">
+                  0g
+                </strong>
+
+                <span>
+                  Protein
+                </span>
+
+              </div>
+
+
+              <div>
+
+                <strong id="previewCarbs">
+                  0g
+                </strong>
+
+                <span>
+                  Carbs
+                </span>
+
+              </div>
+
+
+              <div>
+
+                <strong id="previewFat">
+                  0g
+                </strong>
+
+                <span>
+                  Fat
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- ADD BUTTON -->
+
+          <button
+            type="submit"
+            class="calculate-btn"
+          >
+
+            <span>
+              Add Food
+            </span>
+
+            <span>
+              +
+            </span>
+
+          </button>
+
+        </form>
+
+      </section>
+
+
+
+      <!-- ==============================
+           TODAY'S FOOD
+      =============================== -->
+
+      <section class="today-food-card glass">
+
+        <div class="section-title">
+
+          <div>
+
+            <h2>
+              Today's Food
+            </h2>
+
+            <p>
+              <span id="foodCount">0</span>
+              items tracked today
+            </p>
+
+          </div>
+
+          <div class="section-icon">
+            🍽️
+          </div>
+
+        </div>
+
+
+        <!-- FOOD LIST -->
+
+        <div id="foodList">
+
+          <div class="empty-food">
+
+            <div class="empty-icon">
+              🍽️
+            </div>
+
+            <h3>
+              No food added yet
+            </h3>
+
+            <p>
+              Start tracking your meals above
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- CLEAR -->
+
+        <button
+          type="button"
+          id="clearToday"
+          class="danger-btn"
+        >
+          Clear Today's Food
+        </button>
+
+      </section>
+
+    </main>
+
+
+
+    <!-- ==============================
+         BOTTOM NAV
+    =============================== -->
+
+    <nav class="bottom-nav">
+
+      <a href="../index.html">
+
+        <span>
+          🏠
+        </span>
+
+        <small>
+          Home
+        </small>
+
+      </a>
+
+
+      <a href="calculator.html">
+
+        <span>
+          🔥
+        </span>
+
+        <small>
+          Calories
+        </small>
+
+      </a>
+
+
+      <a
+        href="food.html"
+        class="active"
+      >
+
+        <span>
+          🍽️
+        </span>
+
+        <small>
+          Food
+        </small>
+
+      </a>
+
+
+      <a href="workout.html">
+
+        <span>
+          🏋️
+        </span>
+
+        <small>
+          Workout
+        </small>
+
+      </a>
+
+        <a href="progress.html">
+    
+            <span>
+            📈
+            </span>
+    
+            <small>
+            Progress
+            </small>    
+      
+    </nav>
+
+  </div>
+
+  
+  <script src="food.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#10231b"
+  >
+
+  <title>NutriX - Workout</title>
+
+  <link
+    rel="icon"
+    href="../assets/images/nutrix-logo.png"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../style.css"
+  >
+
+</head>
+
+
+<body>
+
+  <div class="page-bg"></div>
+
+
+  <main class="app-container">
+
+    <!-- ============================= -->
+    <!-- HEADER -->
+    <!-- ============================= -->
+
+    <header class="page-header">
+
+      <div class="page-title">
+
+        <img
+          src="../assets/images/nutrix-logo.png"
+          alt="NutriX"
+        >
+
+        <div>
+
+          <h1>
+            Workout
+          </h1>
+
+          <p>
+            Build your plan. Train. Progress.
+          </p>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- ============================= -->
+    <!-- STATS -->
+    <!-- ============================= -->
+
+    <section class="workout-stats">
+
+      <div class="glass workout-stat">
+
+        <span class="stat-icon">
+          🔥
+        </span>
+
+        <strong id="workoutStreak">
+          0
+        </strong>
+
+        <small>
+          Streak
+        </small>
+
+      </div>
+
+
+      <div class="glass workout-stat">
+
+        <span class="stat-icon">
+          🏋️
+        </span>
+
+        <strong id="completedWorkouts">
+          0
+        </strong>
+
+        <small>
+          Completed
+        </small>
+
+      </div>
+
+
+      <div class="glass workout-stat">
+
+        <span class="stat-icon">
+          📅
+        </span>
+
+        <strong id="weeklyWorkouts">
+          0
+        </strong>
+
+        <small>
+          This Week
+        </small>
+
+      </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- PLAN BUILDER -->
+    <!-- ============================= -->
+
+    <section class="glass workout-builder">
+
+      <div class="section-title">
+
+        <div>
+
+          <span class="section-label">
+            PERSONALIZE
+          </span>
+
+          <h2>
+            Build Your Plan
+          </h2>
+
+        </div>
+
+        <span class="section-icon">
+          ⚡
+        </span>
+
+      </div>
+
+
+      <!-- GOAL -->
+
+      <div class="form-group">
+
+        <label for="workoutGoal">
+          Your Goal
+        </label>
+
+        <select id="workoutGoal">
+
+          <option value="">
+            Select Goal
+          </option>
+
+          <option value="Lose Weight">
+            Lose Weight
+          </option>
+
+          <option value="Build Muscle">
+            Build Muscle
+          </option>
+
+          <option value="Maintain Fitness">
+            Maintain Fitness
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- LEVEL -->
+
+      <div class="form-group">
+
+        <label for="workoutLevel">
+          Experience Level
+        </label>
+
+        <select id="workoutLevel">
+
+          <option value="">
+            Select Level
+          </option>
+
+          <option value="beginner">
+            Beginner
+          </option>
+
+          <option value="intermediate">
+            Intermediate
+          </option>
+
+          <option value="advanced">
+            Advanced
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- DAYS -->
+
+      <div class="form-group">
+
+        <label for="workoutDays">
+          Training Days
+        </label>
+
+        <select id="workoutDays">
+
+          <option value="">
+            Select Days
+          </option>
+
+          <option value="3">
+            3 Days / Week
+          </option>
+
+          <option value="4">
+            4 Days / Week
+          </option>
+
+          <option value="5">
+            5 Days / Week
+          </option>
+
+          <option value="6">
+            6 Days / Week
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <button
+        id="generatePlan"
+        class="primary-btn"
+        type="button"
+      >
+        Generate My Plan
+      </button>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- TODAY WORKOUT -->
+    <!-- ============================= -->
+
+    <section class="workout-section">
+
+      <div class="section-title">
+
+        <div>
+
+          <span class="section-label">
+            YOUR TRAINING
+          </span>
+
+          <h2>
+            Workout
+          </h2>
+
+          <p id="todayWorkoutSubtitle">
+            Create your plan to get started
+          </p>
+
+        </div>
+
+        <span class="section-icon">
+          🏋️
+        </span>
+
+      </div>
+
+
+      <div
+        id="todayWorkout"
+        class="glass today-workout"
+      >
+
+        <div class="empty-workout">
+
+          <div class="empty-workout-icon">
+            🏋️
+          </div>
+
+          <h2>
+            No Workout Plan Yet
+          </h2>
+
+          <p>
+            Choose your goal, level and training days
+            to generate your personalized plan.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- EXERCISES -->
+
+      <div
+        id="exerciseList"
+        class="exercise-list"
+      ></div>
+
+
+      <!-- COMPLETE -->
+
+      <button
+        id="completeWorkout"
+        class="primary-btn complete-btn"
+        type="button"
+        disabled
+      >
+        ✓ Complete Workout
+      </button>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- WEEKLY PLAN -->
+    <!-- ============================= -->
+
+    <section class="workout-section">
+
+      <div class="section-title">
+
+        <div>
+
+          <span class="section-label">
+            YOUR WEEK
+          </span>
+
+          <h2>
+            Weekly Plan
+          </h2>
+
+          <p>
+            Saturday → Friday
+          </p>
+
+        </div>
+
+        <span class="section-icon">
+          📅
+        </span>
+
+      </div>
+
+
+      <div
+        id="weeklyPlanList"
+        class="weekly-plan-list"
+      >
+
+        <div class="weekly-empty">
+
+          Generate a workout plan first.
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- ============================= -->
+  <!-- BOTTOM NAV -->
+  <!-- ============================= -->
+
+  <nav class="bottom-nav">
+
+    <a href="../index.html">
+
+      <span>
+        🏠
+      </span>
+
+      <small>
+        Home
+      </small>
+
+    </a>
+
+
+    <a href="calculator.html">
+
+      <span>
+        🔥
+      </span>
+
+      <small>
+        Calories
+      </small>
+
+    </a>
+
+
+    <a href="food.html">
+
+      <span>
+        🍽️
+      </span>
+
+      <small>
+        Food
+      </small>
+
+    </a>
+
+
+    <a
+      href="workout.html"
+      class="active"
+    >
+
+      <span>
+        🏋️
+      </span>
+
+      <small>
+        Workout
+      </small>
+
+    </a>
+     <a href="progress.html">
+      <span>📈</span>
+      <small>Progress</small>
+    </a>
+
+  </nav>
+
+  
+  <script src="../app.js"></script>
+
+  <script src="workout.js"></script>
+
+</body>
+
+</html>

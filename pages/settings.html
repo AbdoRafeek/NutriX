@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <meta
+        name="theme-color"
+        content="#071a13"
+    >
+
+    <title>Settings | NutriX</title>
+     
+    <link
+    rel="icon"
+    href="../assets/images/nutrix-logo.png">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="settings.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="page-bg"></div>
+
+    <main class="settings-page">
+
+        <!-- Header -->
+        <header class="settings-header">
+
+            <a href="../index.html" class="back-btn" aria-label="Back">
+                <span>←</span>
+            </a>
+
+            <div class="settings-title">
+                <span class="settings-icon">⚙️</span>
+
+                <div>
+                    <h1>Settings</h1>
+                    <p>Customize your NutriX experience</p>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- Language -->
+        <section class="settings-section">
+
+            <div class="section-heading">
+                <div class="section-heading-icon">🌐</div>
+
+                <div>
+                    <h2>Language</h2>
+                    
+                </div>
+            </div>
+
+            <div class="language-options">
+
+                <button
+                    type="button"
+                    class="language-option active"
+                    data-language="en"
+                >
+                    <div class="language-info">
+                        <span class="language-flag">🇺🇸</span>
+
+                        <div>
+                            <strong>English</strong>
+                            <small>English</small>
+                        </div>
+                    </div>
+
+                    <span class="language-check">✓</span>
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- App Information -->
+        <section class="settings-section">
+
+            <div class="section-heading">
+                <div class="section-heading-icon">ℹ️</div>
+
+                <div>
+                    <h2>App Information</h2>
+                    <p>Information about NutriX</p>
+                </div>
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-row">
+                    <span>App Name</span>
+                    <strong>NutriX</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Version</span>
+                    <strong>1.0.0</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Type</span>
+                    <strong>PWA</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Developer -->
+        <section class="settings-section">
+
+            <div class="section-heading">
+                <div class="section-heading-icon">👨‍💻</div>
+
+                <div>
+                    <h2>Developer</h2>
+                    <p>Get in touch</p>
+                </div>
+            </div>
+
+
+            <div class="developer-card">
+
+                <div class="developer-avatar">
+                    <img src="../assets/images/mee.jpg" alt="Developer">
+                </div>
+
+                <div class="developer-info">
+                    <h3>Abdelrahman Ehab Rafeek</h3>
+                    
+                </div>
+
+            </div>
+
+
+            <a
+                href="https://wa.me/+201553178121"
+                class="contact-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span>💬</span>
+                <span>Contact on WhatsApp</span>
+                <span class="contact-arrow">→</span>
+            </a>
+
+        </section>
+
+
+        <!-- Data -->
+        <section class="settings-section danger-section">
+
+            <div class="section-heading">
+
+                <div class="section-heading-icon danger-icon">
+                    🗑️
+                </div>
+
+                <div>
+                    <h2>Data</h2>
+                    <p>Manage your NutriX data</p>
+                </div>
+
+            </div>
+
+
+            <div class="danger-card">
+
+                <div class="danger-content">
+
+                    <div>
+                        <h3>Reset All Data</h3>
+
+                        <p>
+                            Delete your profile, food records,
+                            workout history and progress data.
+                        </p>
+                    </div>
+
+                    <button
+                        type="button"
+                        id="resetDataBtn"
+                        class="reset-btn"
+                    >
+                        Reset
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="settings-footer">
+
+            <div class="footer-logo">
+                <span>Nutri</span><strong>X</strong>
+            </div>
+
+            <p>
+                Your personal nutrition & fitness companion
+            </p>
+
+            <small>
+                Made with for a healthier lifestyle
+            </small>
+
+        </footer>
+
+    </main>
+
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+
+        <a href="../index.html" class="nav-item">
+            <span class="nav-icon">⌂</span>
+            <span>Home</span>
+        </a>
+
+        <a href="calculator.html" class="nav-item">
+            <span class="nav-icon">⌁</span>
+            <span>Calculator</span>
+        </a>
+
+        <a href="food.html" class="nav-item">
+            <span class="nav-icon">🍴</span>
+            <span>Food</span>
+        </a>
+
+        <a href="workout.html" class="nav-item">
+            <span class="nav-icon">🏋️</span>
+            <span>Workout</span>
+        </a>
+
+        <a href="progress.html" class="nav-item">
+            <span class="nav-icon">📊</span>
+            <span>Progress</span>
+        </a>
+
+    </nav>
+
+
+    <!-- Reset Confirmation Modal -->
+    <div
+        id="resetModal"
+        class="reset-modal hidden"
+        aria-hidden="true"
+    >
+
+        <div class="reset-modal-overlay"></div>
+
+        <div
+            class="reset-modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="resetModalTitle"
+        >
+
+            <div class="modal-warning-icon">
+                ⚠️
+            </div>
+
+            <h2 id="resetModalTitle">
+                Reset all data?
+            </h2>
+
+            <p>
+                This will permanently delete your profile,
+                food records, workout history, weight history
+                and progress data.
+            </p>
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    id="cancelResetBtn"
+                    class="modal-cancel-btn"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="button"
+                    id="confirmResetBtn"
+                    class="modal-confirm-btn"
+                >
+                    Yes, Reset
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    
+    <script src="settings.js"></script>
+
+</body>
+</html>

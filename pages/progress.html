@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07120e">
+
+  <title>NutriX - Progress</title>
+
+  <link
+    rel="icon"
+    href="../assets/images/nutrix-logo.png">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="progress.css">
+</head>
+
+<body class="page-bg">
+
+  <div class="app-container progress-page">
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="page-header">
+
+      <div class="page-title">
+
+        <img
+          src="../assets/images/nutrix-logo.png"
+          alt="NutriX"
+        >
+
+        <div>
+          <h1>Progress</h1>
+          <p>Track your journey. See your progress.</p>
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <main>
+
+      <!-- =========================
+           OVERVIEW
+      ========================== -->
+
+      <section class="progress-section">
+
+        <div class="progress-section-heading">
+
+          <div>
+            <span class="progress-label">
+              YOUR JOURNEY
+            </span>
+
+            <h2>Overview</h2>
+          </div>
+
+          <span class="progress-heading-icon">
+            📈
+          </span>
+
+        </div>
+
+
+        <div class="progress-overview-grid">
+
+
+          <!-- Current Weight -->
+
+          <article class="progress-main-card glass">
+
+            <div class="progress-card-top">
+
+              <div>
+
+                <span class="progress-muted">
+                  Current Weight
+                </span>
+
+                <strong id="currentWeight">
+                  --
+                </strong>
+
+                <small>
+                  kg
+                </small>
+
+              </div>
+
+              <div class="progress-card-icon">
+                ⚖️
+              </div>
+
+            </div>
+
+
+            <div class="progress-card-footer">
+
+              <span id="weightStatus">
+                Set your weight from Calculator
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- Average Calories -->
+
+          <article class="progress-stat-card glass">
+
+            <span class="progress-stat-icon">
+              🔥
+            </span>
+
+            <strong id="averageCalories">
+              0
+            </strong>
+
+            <span>
+              Avg. Calories
+            </span>
+
+          </article>
+
+
+          <!-- Workouts -->
+
+          <article class="progress-stat-card glass">
+
+            <span class="progress-stat-icon">
+              🏋️
+            </span>
+
+            <strong id="totalWorkouts">
+              0
+            </strong>
+
+            <span>
+              Workouts
+            </span>
+
+          </article>
+
+
+          <!-- Streak -->
+
+          <article class="progress-stat-card glass">
+
+            <span class="progress-stat-icon">
+              🔥
+            </span>
+
+            <strong id="currentStreak">
+              0
+            </strong>
+
+            <span>
+              Day Streak
+            </span>
+
+          </article>
+
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =========================
+           WEEKLY ACTIVITY
+      ========================== -->
+
+      <section class="progress-section">
+
+        <div class="progress-section-heading">
+
+          <div>
+
+            <span class="progress-label">
+              LAST 7 DAYS
+            </span>
+
+            <h2>
+              Weekly Activity
+            </h2>
+
+          </div>
+
+          <span class="progress-heading-icon">
+            📅
+          </span>
+
+        </div>
+
+
+        <div class="weekly-card glass">
+
+          <div
+            class="week-days"
+            id="weekDays"
+          ></div>
+
+
+          <div class="weekly-summary">
+
+            <div>
+
+              <strong id="foodDays">
+                0
+              </strong>
+
+              <span>
+                Food days
+              </span>
+
+            </div>
+
+
+            <div>
+
+              <strong id="workoutDays">
+                0
+              </strong>
+
+              <span>
+                Workout days
+              </span>
+
+            </div>
+
+
+            <div>
+
+              <strong id="activeDays">
+                0
+              </strong>
+
+              <span>
+                Active days
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =========================
+           WEIGHT PROGRESS
+      ========================== -->
+
+      <section class="progress-section">
+
+        <div class="progress-section-heading">
+
+          <div>
+
+            <span class="progress-label">
+              BODY WEIGHT
+            </span>
+
+            <h2>
+              Weight Progress
+            </h2>
+
+          </div>
+
+          <span class="progress-heading-icon">
+            ⚖️
+          </span>
+
+        </div>
+
+
+        <div class="progress-chart-card glass">
+
+
+          <div class="chart-header">
+
+            <div>
+
+              <span class="progress-muted">
+                Current Weight
+              </span>
+
+              <strong id="weightChartCurrent">
+                --
+              </strong>
+
+            </div>
+
+
+            <div class="chart-change">
+
+              <span>
+                Change
+              </span>
+
+              <strong id="weightChange">
+                --
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="chart-wrapper weight-chart-wrapper"
+          >
+
+            <div
+              id="weightChart"
+              class="progress-chart"
+            ></div>
+
+          </div>
+
+
+          <div
+            id="weightChartEmpty"
+            class="chart-empty"
+            hidden
+          >
+
+            <span>
+              ⚖️
+            </span>
+
+            <strong>
+              No weight history yet
+            </strong>
+
+            <p>
+              Calculate your nutrition targets and save your weight to start tracking.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =========================
+           CALORIES TREND
+      ========================== -->
+
+      <section class="progress-section">
+
+        <div class="progress-section-heading">
+
+          <div>
+
+            <span class="progress-label">
+              NUTRITION TREND
+            </span>
+
+            <h2>
+              Calories Trend
+            </h2>
+
+          </div>
+
+          <span class="progress-heading-icon">
+            🔥
+          </span>
+
+        </div>
+
+
+        <div class="progress-chart-card glass">
+
+
+          <div class="chart-header">
+
+            <div>
+
+              <span class="progress-muted">
+                7-Day Average
+              </span>
+
+              <strong>
+                <span id="calorieChartAverage">
+                  0
+                </span>
+                kcal
+              </strong>
+
+            </div>
+
+
+            <div class="chart-change">
+
+              <span>
+                Daily Goal
+              </span>
+
+              <strong>
+                <span id="calorieChartGoal">
+                  0
+                </span>
+                kcal
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="chart-wrapper calorie-chart-wrapper"
+          >
+
+            <div
+              id="calorieChart"
+              class="progress-chart"
+            ></div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =========================
+           NUTRITION MACROS
+      ========================== -->
+
+      <section class="progress-section">
+
+        <div class="progress-section-heading">
+
+          <div>
+
+            <span class="progress-label">
+              NUTRITION
+            </span>
+
+            <h2>
+              Macro Progress
+            </h2>
+
+          </div>
+
+          <span class="progress-heading-icon">
+            🥗
+          </span>
+
+        </div>
+
+
+        <div class="nutrition-progress-card glass">
+
+
+          <!-- Protein -->
+
+          <div class="nutrition-row">
+
+            <div class="nutrition-row-head">
+
+              <span>
+                Protein
+              </span>
+
+              <strong>
+                <span id="proteinCurrent">
+                  0
+                </span>
+
+                /
+
+                <span id="proteinGoal">
+                  0
+                </span>
+
+                g
+              </strong>
+
+            </div>
+
+
+            <div class="nutrition-track">
+
+              <div
+                class="nutrition-fill protein"
+                id="proteinBar"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- Carbs -->
+
+          <div class="nutrition-row">
+
+            <div class="nutrition-row-head">
+
+              <span>
+                Carbs
+              </span>
+
+              <strong>
+
+                <span id="carbsCurrent">
+                  0
+                </span>
+
+                /
+
+                <span id="carbsGoal">
+                  0
+                </span>
+
+                g
+
+              </strong>
+
+            </div>
+
+
+            <div class="nutrition-track">
+
+              <div
+                class="nutrition-fill carbs"
+                id="carbsBar"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- Fat -->
+
+          <div class="nutrition-row">
+
+            <div class="nutrition-row-head">
+
+              <span>
+                Fat
+              </span>
+
+              <strong>
+
+                <span id="fatCurrent">
+                  0
+                </span>
+
+                /
+
+                <span id="fatGoal">
+                  0
+                </span>
+
+                g
+
+              </strong>
+
+            </div>
+
+
+            <div class="nutrition-track">
+
+              <div
+                class="nutrition-fill fat"
+                id="fatBar"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- Calories -->
+
+          <div class="nutrition-calorie-box">
+
+            <div>
+
+              <span>
+                Average daily calories
+              </span>
+
+              <strong>
+
+                <span id="nutritionCalories">
+                  0
+                </span>
+
+                kcal
+
+              </strong>
+
+            </div>
+
+
+            <div class="calorie-goal-mini">
+
+              <span>
+                Goal
+              </span>
+
+              <strong>
+
+                <span id="calorieGoal">
+                  0
+                </span>
+
+                kcal
+
+              </strong>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =========================
+           WORKOUT ACTIVITY
+      ========================== -->
+
+      <section class="progress-section">
+
+        <div class="progress-section-heading">
+
+          <div>
+
+            <span class="progress-label">
+              TRAINING TREND
+            </span>
+
+            <h2>
+              Workout Activity
+            </h2>
+
+          </div>
+
+          <span class="progress-heading-icon">
+            🏋️
+          </span>
+
+        </div>
+
+
+        <div class="progress-chart-card glass">
+
+
+          <div class="chart-header">
+
+            <div>
+
+              <span class="progress-muted">
+                Completed
+              </span>
+
+              <strong>
+
+                <span id="workoutChartCompleted">
+                  0
+                </span>
+
+              </strong>
+
+            </div>
+
+
+            <div class="chart-change">
+
+              <span>
+                Scheduled
+              </span>
+
+              <strong>
+
+                <span id="workoutChartScheduled">
+                  0
+                </span>
+
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="chart-wrapper workout-chart-wrapper"
+          >
+
+            <div
+              id="workoutChart"
+              class="progress-chart"
+            ></div>
+
+          </div>
+
+
+          <div class="chart-footer">
+
+            <span>
+              Consistency
+            </span>
+
+            <strong id="workoutConsistency">
+              0%
+            </strong>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =========================
+           WORKOUT PROGRESS
+      ========================== -->
+
+      <section class="progress-section">
+
+        <div class="progress-section-heading">
+
+          <div>
+
+            <span class="progress-label">
+              TRAINING
+            </span>
+
+            <h2>
+              Workout Progress
+            </h2>
+
+          </div>
+
+          <span class="progress-heading-icon">
+            💪
+          </span>
+
+        </div>
+
+
+        <div class="workout-progress-grid">
+
+
+          <!-- Current Streak -->
+
+          <div class="workout-progress-card glass">
+
+            <span>
+              🔥
+            </span>
+
+            <div>
+
+              <small>
+                Current Streak
+              </small>
+
+              <strong>
+
+                <span id="workoutCurrentStreak">
+                  0
+                </span>
+
+                days
+
+              </strong>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- Best Streak -->
+
+          <div class="workout-progress-card glass">
+
+            <span>
+              🏆
+            </span>
+
+            <div>
+
+              <small>
+                Best Streak
+              </small>
+
+              <strong>
+
+                <span id="bestStreak">
+                  0
+                </span>
+
+                days
+
+              </strong>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- Total Completed -->
+
+          <div class="workout-progress-card glass">
+
+            <span>
+              💪
+            </span>
+
+            <div>
+
+              <small>
+                Total Completed
+              </small>
+
+              <strong>
+
+                <span id="completedWorkouts">
+                  0
+                </span>
+
+              </strong>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =========================
+           GOAL
+      ========================== -->
+
+      <section class="progress-section">
+
+        <div class="progress-section-heading">
+
+          <div>
+
+            <span class="progress-label">
+              YOUR GOAL
+            </span>
+
+            <h2>
+              Keep Going
+            </h2>
+
+          </div>
+
+          <span class="progress-heading-icon">
+            🎯
+          </span>
+
+        </div>
+
+
+        <div class="goal-card glass">
+
+
+          <div
+            class="goal-icon"
+            id="goalIcon"
+          >
+            🎯
+          </div>
+
+
+          <div class="goal-content">
+
+            <span>
+              Your current goal
+            </span>
+
+            <h3 id="goalName">
+              Not set yet
+            </h3>
+
+            <p id="goalMessage">
+              Complete your Calculator setup to start tracking your nutrition targets.
+            </p>
+
+          </div>
+
+
+          <a
+            href="calculator.html"
+            class="progress-action-btn"
+          >
+            Calculator →
+          </a>
+
+
+        </div>
+
+      </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         BOTTOM NAVIGATION
+    ========================== -->
+
+    <nav class="bottom-nav">
+
+      <a href="../index.html">
+
+        <span>
+          🏠
+        </span>
+
+        <small>
+          Home
+        </small>
+
+      </a>
+
+
+      <a href="calculator.html">
+
+        <span>
+          🔥
+        </span>
+
+        <small>
+          Calories
+        </small>
+
+      </a>
+
+
+      <a href="food.html">
+
+        <span>
+          🍽️
+        </span>
+
+        <small>
+          Food
+        </small>
+
+      </a>
+
+
+      <a href="workout.html">
+
+        <span>
+          🏋️
+        </span>
+
+        <small>
+          Workout
+        </small>
+
+      </a>
+
+
+      <a
+        href="progress.html"
+        class="active"
+      >
+
+        <span>
+          📈
+        </span>
+
+        <small>
+          Progress
+        </small>
+
+      </a>
+
+    </nav>
+
+
+  </div>
+
+  
+  <script src="progress.js"></script>
+
+</body>
+</html>

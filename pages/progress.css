@@ -1,0 +1,1701 @@
+/* =========================================================
+   NutriX - Progress Page
+   ========================================================= */
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.progress-page {
+  padding-bottom: 110px;
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.progress-section {
+  margin-bottom: 26px;
+}
+
+
+.progress-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+
+.progress-section-heading > div {
+  min-width: 0;
+}
+
+
+.progress-label {
+  display: block;
+  margin-bottom: 4px;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+
+  color: rgba(130, 255, 183, 0.65);
+
+  text-transform: uppercase;
+}
+
+
+.progress-section-heading h2 {
+  margin: 0;
+
+  font-size: 21px;
+  line-height: 1.2;
+  font-weight: 800;
+
+  color: #f3fff8;
+}
+
+
+.progress-heading-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 14px;
+
+  background: rgba(35, 175, 98, 0.10);
+  border: 1px solid rgba(92, 255, 155, 0.12);
+
+  font-size: 20px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.04),
+    0 8px 25px rgba(0,0,0,0.18);
+}
+
+
+/* =========================================================
+   GLASS
+   ========================================================= */
+
+.progress-page .glass {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(21, 55, 39, 0.72),
+      rgba(8, 26, 18, 0.82)
+    );
+
+  border: 1px solid rgba(110, 255, 164, 0.10);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255,255,255,0.035);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =========================================================
+   OVERVIEW
+   ========================================================= */
+
+.progress-overview-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.45fr)
+    repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+
+.progress-main-card {
+  min-height: 145px;
+
+  padding: 18px;
+
+  border-radius: 22px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+
+.progress-main-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 150px;
+  height: 150px;
+
+  top: -80px;
+  right: -55px;
+
+  border-radius: 50%;
+
+  background: rgba(57, 220, 119, 0.10);
+
+  filter: blur(3px);
+
+  pointer-events: none;
+}
+
+
+.progress-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+
+  position: relative;
+  z-index: 1;
+}
+
+
+.progress-muted {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 12px;
+
+  color: rgba(224, 247, 234, 0.55);
+}
+
+
+.progress-card-top strong {
+  display: inline-block;
+
+  font-size: 31px;
+  line-height: 1;
+
+  font-weight: 850;
+
+  letter-spacing: -1px;
+
+  color: #f3fff8;
+}
+
+
+.progress-card-top small {
+  margin-left: 3px;
+
+  font-size: 12px;
+
+  color: rgba(224, 247, 234, 0.55);
+}
+
+
+.progress-card-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: rgba(68, 230, 125, 0.10);
+
+  border: 1px solid rgba(90, 255, 152, 0.10);
+
+  font-size: 19px;
+}
+
+
+.progress-card-footer {
+  margin-top: 20px;
+
+  position: relative;
+  z-index: 1;
+}
+
+
+.progress-card-footer span {
+  font-size: 11px;
+
+  color: rgba(207, 239, 220, 0.48);
+}
+
+
+.progress-stat-card {
+  min-height: 145px;
+
+  padding: 17px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-radius: 22px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.progress-stat-card:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(100, 255, 164, 0.18);
+}
+
+
+.progress-stat-icon {
+  display: block;
+
+  margin-bottom: 9px;
+
+  font-size: 18px;
+}
+
+
+.progress-stat-card strong {
+  display: block;
+
+  font-size: 25px;
+  line-height: 1;
+
+  font-weight: 850;
+
+  color: #f3fff8;
+}
+
+
+.progress-stat-card > span:last-child {
+  margin-top: 7px;
+
+  font-size: 11px;
+
+  color: rgba(218, 244, 227, 0.48);
+}
+
+
+/* =========================================================
+   WEEKLY ACTIVITY
+   ========================================================= */
+
+.weekly-card {
+  padding: 16px;
+
+  border-radius: 22px;
+}
+
+
+.week-days {
+  display: grid;
+
+  grid-template-columns:
+    repeat(7, minmax(0, 1fr));
+
+  gap: 7px;
+}
+
+
+.week-day {
+  min-width: 0;
+
+  padding: 10px 4px 9px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: 15px;
+
+  background:
+    rgba(255,255,255,0.025);
+
+  border: 1px solid
+    rgba(255,255,255,0.035);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.week-day:hover {
+  transform: translateY(-2px);
+
+  background:
+    rgba(50, 190, 103, 0.08);
+
+  border-color:
+    rgba(89, 245, 146, 0.14);
+}
+
+
+.week-day.today {
+  background:
+    rgba(49, 205, 104, 0.11);
+
+  border-color:
+    rgba(92, 255, 151, 0.22);
+
+  box-shadow:
+    0 0 0 1px
+      rgba(79, 241, 139, 0.04);
+}
+
+
+.week-day-name {
+  font-size: 9px;
+
+  font-weight: 700;
+
+  color:
+    rgba(216, 241, 225, 0.48);
+}
+
+
+.week-day-number {
+  margin-top: 4px;
+
+  font-size: 17px;
+
+  line-height: 1;
+
+  color: #f2fff6;
+}
+
+
+.week-day-status {
+  min-height: 17px;
+
+  margin-top: 7px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 2px;
+
+  font-size: 9px;
+}
+
+
+.week-day-status span {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+.rest-dot {
+  opacity: 0.25;
+}
+
+
+.weekly-summary {
+  margin-top: 16px;
+  padding-top: 15px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  border-top:
+    1px solid
+    rgba(255,255,255,0.05);
+}
+
+
+.weekly-summary > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 4px;
+}
+
+
+.weekly-summary > div + div {
+  border-left:
+    1px solid
+    rgba(255,255,255,0.05);
+}
+
+
+.weekly-summary strong {
+  font-size: 20px;
+
+  line-height: 1;
+
+  color: #f3fff8;
+}
+
+
+.weekly-summary span {
+  font-size: 10px;
+
+  color:
+    rgba(218, 244, 227, 0.45);
+}
+
+
+/* =========================================================
+   CHART CARD
+   ========================================================= */
+
+.progress-chart-card {
+  padding: 18px;
+
+  border-radius: 22px;
+
+  overflow: hidden;
+}
+
+
+.chart-header {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  margin-bottom: 14px;
+}
+
+
+.chart-header > div {
+  min-width: 0;
+}
+
+
+.chart-header strong {
+  display: block;
+
+  font-size: 23px;
+
+  line-height: 1.15;
+
+  color: #f4fff8;
+
+  font-weight: 850;
+}
+
+
+.chart-change {
+  text-align: right;
+}
+
+
+.chart-change > span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 10px;
+
+  color:
+    rgba(213, 241, 223, 0.43);
+}
+
+
+.chart-change strong {
+  font-size: 15px;
+
+  color:
+    rgba(136, 255, 177, 0.88);
+}
+
+
+/* =========================================================
+   CHART WRAPPER
+   ========================================================= */
+
+.chart-wrapper {
+  width: 100%;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 15px;
+
+  background:
+    rgba(0,0,0,0.10);
+
+  border:
+    1px solid
+    rgba(255,255,255,0.025);
+}
+
+
+.weight-chart-wrapper {
+  min-height: 250px;
+}
+
+
+.calorie-chart-wrapper {
+  min-height: 250px;
+}
+
+
+.workout-chart-wrapper {
+  min-height: 250px;
+}
+
+
+.progress-chart {
+  width: 100%;
+
+  height: 250px;
+}
+
+
+.progress-chart svg {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  overflow: visible;
+}
+
+
+/* =========================================================
+   SVG CHART
+   ========================================================= */
+
+.chart-grid-line {
+  stroke:
+    rgba(255,255,255,0.055);
+
+  stroke-width: 1;
+
+  stroke-dasharray: 4 6;
+}
+
+
+.chart-axis-label {
+  fill:
+    rgba(218, 243, 226, 0.38);
+
+  font-size: 10px;
+
+  font-family:
+    Arial,
+    sans-serif;
+}
+
+
+.chart-value-label {
+  fill:
+    rgba(234, 255, 242, 0.78);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  font-family:
+    Arial,
+    sans-serif;
+}
+
+
+/* =========================================================
+   WEIGHT CHART
+   ========================================================= */
+
+.weight-chart-wrapper svg {
+  min-height: 250px;
+}
+
+
+.weight-chart-wrapper .chart-area {
+  fill:
+    url(#weightAreaGradient);
+
+  opacity: 0.45;
+}
+
+
+.weight-chart-wrapper .chart-line {
+  stroke:
+    #4de88b;
+
+  stroke-width: 3;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  filter:
+    drop-shadow(
+      0 0 6px
+      rgba(77, 232, 139, 0.28)
+    );
+}
+
+
+.weight-chart-wrapper .weight-point {
+  fill:
+    #0b1711;
+
+  stroke:
+    #62f19b;
+
+  stroke-width: 2.5;
+}
+
+
+/* =========================================================
+   CALORIE CHART
+   ========================================================= */
+
+.calorie-bar {
+  fill:
+    rgba(74, 226, 132, 0.58);
+
+  transition:
+    opacity 0.2s ease;
+}
+
+
+.calorie-bar:hover {
+  opacity: 0.75;
+}
+
+
+.chart-goal-line {
+  stroke:
+    rgba(255,255,255,0.30);
+
+  stroke-width: 1.5;
+
+  stroke-dasharray: 6 5;
+}
+
+
+.chart-goal-label {
+  fill:
+    rgba(223, 246, 230, 0.48);
+
+  font-size: 10px;
+
+  font-family:
+    Arial,
+    sans-serif;
+}
+
+
+/* =========================================================
+   WORKOUT CHART
+   ========================================================= */
+
+.workout-bar.completed {
+  fill:
+    rgba(71, 231, 132, 0.72);
+}
+
+
+.workout-bar.scheduled {
+  fill:
+    rgba(71, 231, 132, 0.14);
+
+  stroke:
+    rgba(93, 246, 148, 0.18);
+
+  stroke-width: 1;
+}
+
+
+.workout-bar.rest {
+  fill:
+    rgba(255,255,255,0.035);
+}
+
+
+.chart-footer {
+  margin-top: 14px;
+  padding-top: 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top:
+    1px solid
+    rgba(255,255,255,0.05);
+}
+
+
+.chart-footer span {
+  font-size: 11px;
+
+  color:
+    rgba(217, 242, 225, 0.46);
+}
+
+
+.chart-footer strong {
+  font-size: 15px;
+
+  color:
+    rgba(134, 255, 176, 0.90);
+}
+
+
+/* =========================================================
+   EMPTY CHART
+   ========================================================= */
+
+.chart-empty {
+  min-height: 250px;
+
+  padding: 30px 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+.chart-empty > span {
+  width: 52px;
+  height: 52px;
+
+  margin-bottom: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 17px;
+
+  background:
+    rgba(54, 214, 112, 0.08);
+
+  border:
+    1px solid
+    rgba(91, 247, 145, 0.10);
+
+  font-size: 23px;
+}
+
+
+.chart-empty strong {
+  font-size: 14px;
+
+  color:
+    rgba(240,255,246,0.86);
+}
+
+
+.chart-empty p {
+  max-width: 290px;
+
+  margin: 7px 0 0;
+
+  font-size: 11px;
+
+  line-height: 1.55;
+
+  color:
+    rgba(210, 239, 220, 0.42);
+}
+
+
+/* =========================================================
+   NUTRITION
+   ========================================================= */
+
+.nutrition-progress-card {
+  padding: 20px;
+
+  border-radius: 22px;
+}
+
+
+.nutrition-row {
+  margin-bottom: 19px;
+}
+
+
+.nutrition-row:last-of-type {
+  margin-bottom: 0;
+}
+
+
+.nutrition-row-head {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 8px;
+}
+
+
+.nutrition-row-head > span {
+  font-size: 12px;
+
+  font-weight: 650;
+
+  color:
+    rgba(229, 249, 235, 0.68);
+}
+
+
+.nutrition-row-head strong {
+  font-size: 11px;
+
+  color:
+    rgba(237, 255, 244, 0.75);
+}
+
+
+.nutrition-track {
+  width: 100%;
+
+  height: 8px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255,255,255,0.055);
+}
+
+
+.nutrition-fill {
+  width: 0%;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  transition:
+    width 0.7s cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.nutrition-fill.protein {
+  background:
+    linear-gradient(
+      90deg,
+      #36c878,
+      #69f39e
+    );
+
+  box-shadow:
+    0 0 12px
+    rgba(70, 236, 137, 0.25);
+}
+
+
+.nutrition-fill.carbs {
+  background:
+    linear-gradient(
+      90deg,
+      #269c61,
+      #55d88b
+    );
+
+  box-shadow:
+    0 0 12px
+    rgba(53, 209, 124, 0.22);
+}
+
+
+.nutrition-fill.fat {
+  background:
+    linear-gradient(
+      90deg,
+      #16834e,
+      #42c57c
+    );
+
+  box-shadow:
+    0 0 12px
+    rgba(38, 181, 103, 0.20);
+}
+
+
+.nutrition-calorie-box {
+  margin-top: 22px;
+  padding-top: 17px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  border-top:
+    1px solid
+    rgba(255,255,255,0.05);
+}
+
+
+.nutrition-calorie-box > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.nutrition-calorie-box span {
+  font-size: 10px;
+
+  color:
+    rgba(218, 242, 225, 0.44);
+}
+
+
+.nutrition-calorie-box strong {
+  font-size: 18px;
+
+  color:
+    #f0fff5;
+}
+
+
+.calorie-goal-mini {
+  text-align: right;
+}
+
+
+/* =========================================================
+   WORKOUT PROGRESS
+   ========================================================= */
+
+.workout-progress-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+
+.workout-progress-card {
+  min-height: 96px;
+
+  padding: 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  border-radius: 19px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.workout-progress-card:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(94, 255, 152, 0.17);
+}
+
+
+.workout-progress-card > span {
+  width: 39px;
+  height: 39px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background:
+    rgba(60, 220, 120, 0.09);
+
+  font-size: 17px;
+}
+
+
+.workout-progress-card small {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 10px;
+
+  color:
+    rgba(218, 242, 225, 0.43);
+}
+
+
+.workout-progress-card strong {
+  display: block;
+
+  font-size: 18px;
+
+  color:
+    #f2fff6;
+}
+
+
+/* =========================================================
+   GOAL
+   ========================================================= */
+
+.goal-card {
+  padding: 19px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  border-radius: 22px;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+.goal-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 130px;
+  height: 130px;
+
+  right: -60px;
+  bottom: -75px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(55, 224, 116, 0.08);
+
+  pointer-events: none;
+}
+
+
+.goal-icon {
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 17px;
+
+  background:
+    rgba(60, 222, 119, 0.09);
+
+  border:
+    1px solid
+    rgba(89, 247, 145, 0.10);
+
+  font-size: 24px;
+
+  position: relative;
+  z-index: 1;
+}
+
+
+.goal-content {
+  min-width: 0;
+
+  flex: 1;
+
+  position: relative;
+  z-index: 1;
+}
+
+
+.goal-content > span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 10px;
+
+  color:
+    rgba(215, 242, 224, 0.43);
+}
+
+
+.goal-content h3 {
+  margin: 0;
+
+  font-size: 17px;
+
+  color:
+    #f3fff7;
+}
+
+
+.goal-content p {
+  margin: 5px 0 0;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+
+  color:
+    rgba(214, 240, 222, 0.47);
+}
+
+
+.progress-action-btn {
+  flex-shrink: 0;
+
+  padding: 10px 13px;
+
+  border-radius: 12px;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  font-weight: 750;
+
+  color:
+    rgba(229, 255, 238, 0.86);
+
+  background:
+    rgba(57, 213, 112, 0.09);
+
+  border:
+    1px solid
+    rgba(82, 238, 138, 0.12);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.progress-action-btn:hover {
+  background:
+    rgba(57, 213, 112, 0.16);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   BOTTOM NAV
+   ========================================================= */
+
+.progress-page .bottom-nav {
+  z-index: 100;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+.progress-section {
+  animation:
+    progressFadeIn
+    0.45s ease both;
+}
+
+
+.progress-section:nth-child(2) {
+  animation-delay: 0.04s;
+}
+
+
+.progress-section:nth-child(3) {
+  animation-delay: 0.08s;
+}
+
+
+.progress-section:nth-child(4) {
+  animation-delay: 0.12s;
+}
+
+
+.progress-section:nth-child(5) {
+  animation-delay: 0.16s;
+}
+
+
+.progress-section:nth-child(6) {
+  animation-delay: 0.20s;
+}
+
+
+.progress-section:nth-child(7) {
+  animation-delay: 0.24s;
+}
+
+
+@keyframes progressFadeIn {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .progress-overview-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .progress-main-card {
+    grid-column: span 2;
+  }
+
+
+  .workout-progress-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .progress-page {
+    padding-bottom: 100px;
+  }
+
+
+  .progress-section {
+    margin-bottom: 22px;
+  }
+
+
+  .progress-section-heading {
+    margin-bottom: 11px;
+  }
+
+
+  .progress-section-heading h2 {
+    font-size: 18px;
+  }
+
+
+  .progress-heading-icon {
+    width: 36px;
+    height: 36px;
+
+    border-radius: 12px;
+
+    font-size: 17px;
+  }
+
+
+  /* Overview */
+
+  .progress-overview-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+  }
+
+
+  .progress-main-card {
+    grid-column: span 2;
+
+    min-height: 132px;
+
+    padding: 16px;
+
+    border-radius: 19px;
+  }
+
+
+  .progress-stat-card {
+    min-height: 112px;
+
+    padding: 14px;
+
+    border-radius: 18px;
+  }
+
+
+  .progress-stat-card strong {
+    font-size: 22px;
+  }
+
+
+  .progress-card-top strong {
+    font-size: 28px;
+  }
+
+
+  /* Weekly */
+
+  .weekly-card {
+    padding: 11px;
+
+    border-radius: 19px;
+  }
+
+
+  .week-days {
+    gap: 4px;
+  }
+
+
+  .week-day {
+    padding: 9px 2px 8px;
+
+    border-radius: 12px;
+  }
+
+
+  .week-day-name {
+    font-size: 8px;
+  }
+
+
+  .week-day-number {
+    font-size: 15px;
+  }
+
+
+  .week-day-status {
+    margin-top: 6px;
+
+    font-size: 8px;
+  }
+
+
+  .weekly-summary {
+    margin-top: 12px;
+    padding-top: 12px;
+  }
+
+
+  .weekly-summary strong {
+    font-size: 18px;
+  }
+
+
+  .weekly-summary span {
+    font-size: 9px;
+  }
+
+
+  /* Charts */
+
+  .progress-chart-card {
+    padding: 14px;
+
+    border-radius: 19px;
+  }
+
+
+  .chart-header {
+    margin-bottom: 11px;
+  }
+
+
+  .chart-header strong {
+    font-size: 20px;
+  }
+
+
+  .chart-change strong {
+    font-size: 13px;
+  }
+
+
+  .weight-chart-wrapper,
+  .calorie-chart-wrapper,
+  .workout-chart-wrapper {
+    min-height: 205px;
+  }
+
+
+  .progress-chart {
+    height: 205px;
+  }
+
+
+  .weight-chart-wrapper svg {
+    min-height: 205px;
+  }
+
+
+  .chart-axis-label {
+    font-size: 9px;
+  }
+
+
+  .chart-value-label {
+    font-size: 9px;
+  }
+
+
+  /* Nutrition */
+
+  .nutrition-progress-card {
+    padding: 16px;
+
+    border-radius: 19px;
+  }
+
+
+  .nutrition-row {
+    margin-bottom: 17px;
+  }
+
+
+  .nutrition-calorie-box {
+    margin-top: 19px;
+    padding-top: 14px;
+  }
+
+
+  .nutrition-calorie-box strong {
+    font-size: 16px;
+  }
+
+
+  /* Workout */
+
+  .workout-progress-grid {
+    grid-template-columns:
+      1fr;
+
+    gap: 9px;
+  }
+
+
+  .workout-progress-card {
+    min-height: 78px;
+
+    padding: 13px;
+
+    border-radius: 17px;
+  }
+
+
+  .workout-progress-card > span {
+    width: 36px;
+    height: 36px;
+
+    border-radius: 12px;
+  }
+
+
+  /* Goal */
+
+  .goal-card {
+    padding: 15px;
+
+    align-items: flex-start;
+
+    gap: 11px;
+
+    border-radius: 19px;
+  }
+
+
+  .goal-icon {
+    width: 43px;
+    height: 43px;
+
+    border-radius: 14px;
+
+    font-size: 20px;
+  }
+
+
+  .goal-content h3 {
+    font-size: 15px;
+  }
+
+
+  .goal-content p {
+    font-size: 10px;
+  }
+
+
+  .progress-action-btn {
+    padding: 8px 10px;
+
+    font-size: 9px;
+
+    border-radius: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .progress-section-heading h2 {
+    font-size: 17px;
+  }
+
+
+  .progress-overview-grid {
+    gap: 7px;
+  }
+
+
+  .progress-stat-card {
+    min-height: 105px;
+
+    padding: 12px;
+  }
+
+
+  .progress-stat-card strong {
+    font-size: 20px;
+  }
+
+
+  .progress-stat-card > span:last-child {
+    font-size: 10px;
+  }
+
+
+  .weekly-card {
+    padding: 8px;
+  }
+
+
+  .week-day {
+    padding-left: 1px;
+    padding-right: 1px;
+  }
+
+
+  .week-day-name {
+    font-size: 7px;
+  }
+
+
+  .week-day-number {
+    font-size: 14px;
+  }
+
+
+  .chart-header strong {
+    font-size: 18px;
+  }
+
+
+  .goal-card {
+    flex-wrap: wrap;
+  }
+
+
+  .goal-content {
+    min-width: calc(100% - 55px);
+  }
+
+
+  .progress-action-btn {
+    width: 100%;
+
+    text-align: center;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .progress-section {
+    animation: none;
+  }
+
+
+  .progress-stat-card,
+  .workout-progress-card,
+  .week-day,
+  .progress-action-btn {
+    transition: none;
+  }
+
+
+  .nutrition-fill {
+    transition: none;
+  }
+
+}
