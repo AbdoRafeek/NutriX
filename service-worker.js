@@ -1,4 +1,4 @@
-const CACHE_NAME = "nutrix-v3";
+const CACHE_NAME = "nutrix-v4";
 
 const APP_FILES = [
     "./",
