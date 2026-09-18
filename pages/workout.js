@@ -48,9 +48,9 @@ const splitPlans = {
       "Push",
       "Pull",
       "Legs",
+      "Rest",
       "Upper",
       "Lower",
-      "Rest",
       "Rest"
     ],
 
@@ -70,11 +70,11 @@ const splitPlans = {
   intermediate: {
 
     3: [
-      "Push",
+      "Upper",
       "Rest",
-      "Pull",
+      "Lower",
       "Rest",
-      "Legs",
+      "Upper",
       "Rest",
       "Rest"
     ],
@@ -115,21 +115,21 @@ const splitPlans = {
   advanced: {
 
     3: [
-      "Push",
+      "Upper",
       "Rest",
-      "Pull",
+      "Lower",
       "Rest",
-      "Legs",
+      "Upper",
       "Rest",
       "Rest"
     ],
 
     4: [
-      "Push",
-      "Pull",
-      "Legs",
+      "Upper",
+      "Lower",
       "Rest",
       "Upper",
+      "Lower",
       "Rest",
       "Rest"
     ],
@@ -148,9 +148,9 @@ const splitPlans = {
       "Push",
       "Pull",
       "Legs",
-      "Push",
-      "Pull",
-      "Legs",
+      "Upper",
+      "Lower",
+      "Upper",
       "Rest"
     ]
 
@@ -174,8 +174,8 @@ const workoutDetails = {
     exercises: [
 
       {
-        name: "Bench Press",
-        sets: 4,
+        name: "Flat Bench Press",
+        sets: 3,
         reps: "8-12",
         muscle: "Chest"
       },
@@ -230,14 +230,14 @@ const workoutDetails = {
 
       {
         name: "Lat Pulldown",
-        sets: 4,
+        sets: 3,
         reps: "8-12",
         muscle: "Lats"
       },
 
       {
         name: "Barbell Row",
-        sets: 4,
+        sets: 3,
         reps: "8-12",
         muscle: "Back"
       },
@@ -285,7 +285,7 @@ const workoutDetails = {
 
       {
         name: "Squat",
-        sets: 4,
+        sets: 3,
         reps: "6-10",
         muscle: "Quads"
       },
@@ -320,7 +320,7 @@ const workoutDetails = {
 
       {
         name: "Standing Calf Raises",
-        sets: 4,
+        sets: 3,
         reps: "12-20",
         muscle: "Calves"
       }
@@ -351,6 +351,15 @@ const workoutDetails = {
         reps: "8-12",
         muscle: "Back"
       },
+
+
+      {
+        name: "Chest Fly Machine",
+        sets: 3,
+        reps: "10-12",
+        muscle: "Chest"
+      },   
+
 
       {
         name: "Seated Cable Row",
@@ -402,7 +411,7 @@ const workoutDetails = {
 
       {
         name: "Squat",
-        sets: 4,
+        sets: 3,
         reps: "6-10",
         muscle: "Quads"
       },
@@ -437,7 +446,7 @@ const workoutDetails = {
 
       {
         name: "Calf Raises",
-        sets: 4,
+        sets: 3,
         reps: "12-20",
         muscle: "Calves"
       }
@@ -456,8 +465,8 @@ const workoutDetails = {
     exercises: [
 
       {
-        name: "Bench Press",
-        sets: 4,
+        name: "Flat Bench Press",
+        sets: 3,
         reps: "8-12",
         muscle: "Chest"
       },
@@ -471,14 +480,14 @@ const workoutDetails = {
 
       {
         name: "Lat Pulldown",
-        sets: 4,
+        sets: 3,
         reps: "8-12",
         muscle: "Lats"
       },
 
       {
         name: "Barbell Row",
-        sets: 4,
+        sets: 3,
         reps: "8-12",
         muscle: "Back"
       },
@@ -512,14 +521,14 @@ const workoutDetails = {
 
       {
         name: "Shoulder Press",
-        sets: 4,
+        sets: 3,
         reps: "8-12",
         muscle: "Shoulders"
       },
 
       {
         name: "Lateral Raises",
-        sets: 4,
+        sets: 3,
         reps: "12-15",
         muscle: "Side Delts"
       },
